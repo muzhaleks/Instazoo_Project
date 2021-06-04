@@ -1,4 +1,4 @@
-<div *ngIf="isPostLoaded && isUserDataLoaded" class="index-page">
+<div *ngIf="isPostsLoaded && isUserDataLoaded" class="index-page">
   <mat-card class="post-card" *ngFor="let post of posts; let i = index">
     <mat-card-header style="text-align: left">
       <div mat-card-avatar class="example-header-image"></div>
@@ -13,8 +13,7 @@
 
     <mat-card-actions align="start">
 
-      <button *ngIf="isUserDataLoaded" mat-button (click)="likePost(post.id, i)"
-              [ngClass]="post.usersLiked.indexOf(user.username) !== -1 ? 'is-liked' : 'not-liked'">
+      <button *ngIf="isUserDataLoaded" mat-button (click)="likePost(post.id, i)" [ngClass]="post.usersLiked.indexOf(user.username) !== -1 ? 'is-liked' : 'not-liked'">
         <mat-icon>favorite</mat-icon> Like</button>
     </mat-card-actions>
 
@@ -30,4 +29,3 @@
 
   </mat-card>
 </div>
-
